@@ -9,24 +9,31 @@ import SwiftUI
 
 struct AccountCell: View {
     
-    let iconName: String
-    let name: String
-    let amount: Float
+    let account: Account
+    @State var isFavourite = false
     
     var body: some View {
         HStack {
-            Image(iconName)
+            Image(account.iconName)
                 .resizable()
                 .padding(4)
                 .frame(width: 50, height: 50)
             VStack(alignment: .leading, spacing: 4) {
-                Text(name)
+                Text(account.name)
                     .font(.headline)
                     .foregroundColor(.primary)
-                Text("Solde : \(String(format: "%.2f", amount)) €")
+                Text("Solde : \(String(format: "%.2f", account.amount)) €")
                     .font(.footnote)
                     .foregroundColor(Color(white: 0.4))
             }
+            Spacer()
+            Button {
+                isFavourite.toggle()
+            } label: {
+                Image(systemName: isFavourite ? "star.fill" : "star")
+                    .foregroundColor(isFavourite ? .yellow : Color(white: 0.4))
+            }
+
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding()
@@ -36,15 +43,13 @@ struct AccountCell: View {
 }
 
 struct AccountCell_Previews: PreviewProvider {
+    
+    static let previewAccount = Account(iconName: "icon_002", name: "PayPal", amount: 3259.60)
+    
     static var previews: some View {
-        VStack {
-            AccountCell(iconName: "icon_001", name: "Visa", amount: 1234.56)
-            AccountCell(iconName: "icon_002", name: "PayPal", amount: 1234.56)
-            AccountCell(iconName: "icon_003", name: "Transport", amount: 1234.56)
-            AccountCell(iconName: "icon_004", name: "AirBnB", amount: 1234.56)
-        }
-        .padding()
-        .background(Color("Grey"))
-        .previewLayout(.sizeThatFits)
+        AccountCell(account: previewAccount)
+            .padding()
+            .background(Color("Grey"))
+            .previewLayout(.sizeThatFits)
     }
 }
