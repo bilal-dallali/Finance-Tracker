@@ -16,7 +16,6 @@ struct HomeView: View {
                     Text("\(String(format: "%.2F", previewAccounts.map { $0.amount }.reduce(0, +))) €")
                         .font(.system(size: 32, weight: .bold))
                 }
-                //.previewAccount.map { $0.amount }.reduce(0, +)
                 VStack(alignment: .leading) {
                     Text("Mes comptes")
                         .font(.title2)
