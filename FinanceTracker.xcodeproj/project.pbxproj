@@ -11,8 +11,10 @@
 		9C0BFA2729328BD600FD4E9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C0BFA2629328BD600FD4E9A /* Assets.xcassets */; };
 		9C0BFA2A29328BD600FD4E9A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C0BFA2929328BD600FD4E9A /* Preview Assets.xcassets */; };
 		9C33432829732D6F001AB705 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C33432729732D6F001AB705 /* Currency.swift */; };
+		9C35582C297D2EF60028607C /* AccountCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C35582B297D2EF60028607C /* AccountCreationView.swift */; };
 		9C40D3E52953B6C900849691 /* AccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C40D3E42953B6C900849691 /* AccountCell.swift */; };
 		9C9A911A2954DA880021C90B /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9A91192954DA880021C90B /* Account.swift */; };
+		9CD1FD36297FE30D005483ED /* IconSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD1FD35297FE30D005483ED /* IconSelector.swift */; };
 		9CD28F572979830400515745 /* CurrencySelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD28F562979830400515745 /* CurrencySelector.swift */; };
 		9CEACCAB296C297000C00E15 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEACCAA296C297000C00E15 /* HomeView.swift */; };
 		9CEACCAD296C29DC00C00E15 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEACCAC296C29DC00C00E15 /* PreviewData.swift */; };
@@ -24,8 +26,10 @@
 		9C0BFA2629328BD600FD4E9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C0BFA2929328BD600FD4E9A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9C33432729732D6F001AB705 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		9C35582B297D2EF60028607C /* AccountCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCreationView.swift; sourceTree = "<group>"; };
 		9C40D3E42953B6C900849691 /* AccountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCell.swift; sourceTree = "<group>"; };
 		9C9A91192954DA880021C90B /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		9CD1FD35297FE30D005483ED /* IconSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSelector.swift; sourceTree = "<group>"; };
 		9CD28F562979830400515745 /* CurrencySelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySelector.swift; sourceTree = "<group>"; };
 		9CEACCAA296C297000C00E15 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		9CEACCAC296C29DC00C00E15 /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
@@ -66,10 +70,12 @@
 				9C40D3E42953B6C900849691 /* AccountCell.swift */,
 				9CEACCAC296C29DC00C00E15 /* PreviewData.swift */,
 				9C9A91192954DA880021C90B /* Account.swift */,
-				9C0BFA2629328BD600FD4E9A /* Assets.xcassets */,
-				9C0BFA2829328BD600FD4E9A /* Preview Content */,
 				9C33432729732D6F001AB705 /* Currency.swift */,
 				9CD28F562979830400515745 /* CurrencySelector.swift */,
+				9C35582B297D2EF60028607C /* AccountCreationView.swift */,
+				9CD1FD35297FE30D005483ED /* IconSelector.swift */,
+				9C0BFA2629328BD600FD4E9A /* Assets.xcassets */,
+				9C0BFA2829328BD600FD4E9A /* Preview Content */,
 			);
 			path = FinanceTracker;
 			sourceTree = "<group>";
@@ -153,12 +159,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C33432829732D6F001AB705 /* Currency.swift in Sources */,
+				9C35582C297D2EF60028607C /* AccountCreationView.swift in Sources */,
 				9CEACCAD296C29DC00C00E15 /* PreviewData.swift in Sources */,
 				9C9A911A2954DA880021C90B /* Account.swift in Sources */,
 				9CD28F572979830400515745 /* CurrencySelector.swift in Sources */,
 				9C0BFA2329328BD500FD4E9A /* FinanceTrackerApp.swift in Sources */,
 				9CEACCAB296C297000C00E15 /* HomeView.swift in Sources */,
 				9C40D3E52953B6C900849691 /* AccountCell.swift in Sources */,
+				9CD1FD36297FE30D005483ED /* IconSelector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
