@@ -20,6 +20,7 @@
 		9CD28F572979830400515745 /* CurrencySelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD28F562979830400515745 /* CurrencySelector.swift */; };
 		9CEACCAB296C297000C00E15 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEACCAA296C297000C00E15 /* HomeView.swift */; };
 		9CEACCAD296C29DC00C00E15 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEACCAC296C29DC00C00E15 /* PreviewData.swift */; };
+		9CF87B0E299E9E45000B8A81 /* AccountList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF87B0D299E9E45000B8A81 /* AccountList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		9CD28F562979830400515745 /* CurrencySelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySelector.swift; sourceTree = "<group>"; };
 		9CEACCAA296C297000C00E15 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		9CEACCAC296C29DC00C00E15 /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
+		9CF87B0D299E9E45000B8A81 /* AccountList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,10 +80,11 @@
 				9CD28F562979830400515745 /* CurrencySelector.swift */,
 				9C35582B297D2EF60028607C /* AccountCreationView.swift */,
 				9CD1FD35297FE30D005483ED /* IconSelector.swift */,
-				9C0BFA2629328BD600FD4E9A /* Assets.xcassets */,
-				9C0BFA2829328BD600FD4E9A /* Preview Content */,
 				9CD1FD3729803417005483ED /* MainButton.swift */,
 				9C6899812989B34A0054CF93 /* AccentButton.swift */,
+				9CF87B0D299E9E45000B8A81 /* AccountList.swift */,
+				9C0BFA2629328BD600FD4E9A /* Assets.xcassets */,
+				9C0BFA2829328BD600FD4E9A /* Preview Content */,
 			);
 			path = FinanceTracker;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 				9CEACCAD296C29DC00C00E15 /* PreviewData.swift in Sources */,
 				9C9A911A2954DA880021C90B /* Account.swift in Sources */,
 				9CD1FD3829803417005483ED /* MainButton.swift in Sources */,
+				9CF87B0E299E9E45000B8A81 /* AccountList.swift in Sources */,
 				9CD28F572979830400515745 /* CurrencySelector.swift in Sources */,
 				9C0BFA2329328BD500FD4E9A /* FinanceTrackerApp.swift in Sources */,
 				9C6899822989B34A0054CF93 /* AccentButton.swift in Sources */,
