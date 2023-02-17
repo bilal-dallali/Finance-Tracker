@@ -62,7 +62,13 @@ struct AccountCreationView: View {
             }
             Spacer()
             MainButton(title: "Créer") {
-                let newAccount = Account(iconName: selectedIcon, name: accountName, amount: Float(amount) ?? 0.0)
+                let newAccount = Account(
+                    iconName: selectedIcon,
+                    name: accountName,
+                    initialAmount: Float(amount) ?? 0,
+                    transactions: [],
+                    currency: selectedCurrency
+                )
                 onAccountCreated(newAccount)
                 presentationMode.wrappedValue.dismiss()
             }
