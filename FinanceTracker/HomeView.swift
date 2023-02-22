@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeView: View {
     
     @State private var isPresentingNewAccountScreen = false
-    @StateObject private var accountsList = AccountsList(accounts: previewAccounts)
+    @StateObject private var accountsList = AccountsList()
     
     var body: some View {
         NavigationView {
