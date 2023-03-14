@@ -31,11 +31,12 @@ struct HomeView: View {
                         Text("Mes comptes")
                             .font(.title2)
                             .bold()
-                        if previewAccounts.count > 0 {
+                        if accountsList.accounts.count > 0 {
                             VStack(spacing: 16) {
                                 ForEach(accountsList.accounts) { account in
                                     NavigationLink {
                                         AccountDetailView(account: account)
+                                            .environmentObject(accountsList)
                                     } label: {
                                         AccountCell(account: account)
                                     }

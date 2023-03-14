@@ -57,6 +57,9 @@ struct AccountSelectorMenu: View {
                 }
                 Divider()
                 Button {
+                    withAnimation {
+                        isShowingAccountsList.toggle()
+                    }
                     onCreateAccountButtonPressed()
                 } label: {
                     Text("Créer un compte")

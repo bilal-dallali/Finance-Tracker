@@ -10,6 +10,7 @@
 		9C0BFA2329328BD500FD4E9A /* FinanceTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0BFA2229328BD500FD4E9A /* FinanceTrackerApp.swift */; };
 		9C0BFA2729328BD600FD4E9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C0BFA2629328BD600FD4E9A /* Assets.xcassets */; };
 		9C0BFA2A29328BD600FD4E9A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C0BFA2929328BD600FD4E9A /* Preview Assets.xcassets */; };
+		9C14620129A77EFB005172E4 /* NewTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C14620029A77EFB005172E4 /* NewTransactionView.swift */; };
 		9C2D84E829A6BFB5000179E3 /* AccountSelectorMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2D84E729A6BFB5000179E3 /* AccountSelectorMenu.swift */; };
 		9C33432829732D6F001AB705 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C33432729732D6F001AB705 /* Currency.swift */; };
 		9C35582C297D2EF60028607C /* AccountCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C35582B297D2EF60028607C /* AccountCreationView.swift */; };
@@ -32,6 +33,7 @@
 		9C0BFA2229328BD500FD4E9A /* FinanceTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceTrackerApp.swift; sourceTree = "<group>"; };
 		9C0BFA2629328BD600FD4E9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C0BFA2929328BD600FD4E9A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9C14620029A77EFB005172E4 /* NewTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTransactionView.swift; sourceTree = "<group>"; };
 		9C2D84E729A6BFB5000179E3 /* AccountSelectorMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSelectorMenu.swift; sourceTree = "<group>"; };
 		9C33432729732D6F001AB705 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		9C35582B297D2EF60028607C /* AccountCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCreationView.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				9CF810AC299ED4D500023B21 /* Transaction.swift */,
 				9CF810AE299ED51700023B21 /* TransactionCell.swift */,
 				9C2D84E729A6BFB5000179E3 /* AccountSelectorMenu.swift */,
+				9C14620029A77EFB005172E4 /* NewTransactionView.swift */,
 				9C0BFA2629328BD600FD4E9A /* Assets.xcassets */,
 				9C0BFA2829328BD600FD4E9A /* Preview Content */,
 			);
@@ -192,6 +195,7 @@
 				9CD28F572979830400515745 /* CurrencySelector.swift in Sources */,
 				9C0BFA2329328BD500FD4E9A /* FinanceTrackerApp.swift in Sources */,
 				9C6899822989B34A0054CF93 /* AccentButton.swift in Sources */,
+				9C14620129A77EFB005172E4 /* NewTransactionView.swift in Sources */,
 				9CEACCAB296C297000C00E15 /* HomeView.swift in Sources */,
 				9C40D3E52953B6C900849691 /* AccountCell.swift in Sources */,
 				9CD1FD36297FE30D005483ED /* IconSelector.swift in Sources */,
