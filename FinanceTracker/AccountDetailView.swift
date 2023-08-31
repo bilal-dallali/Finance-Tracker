@@ -11,7 +11,12 @@ struct AccountDetailView: View {
     
     @ObservedObject var account: Account
     @State private var isPresentingNewTransactionScreen = false
-    
+    @State var isShowingAlert = false
+    @State var isShowingTransactionAlert = false
+    @State var isEditingMode = false
+    @EnvironmentObject var accountslist: AccountsList
+    @Environment(\.presentationMode) var presentationMode
+    @State private var selectedTransactionToDelete: Transaction? = nil
     
     var body: some View {
         ScrollView {
@@ -29,11 +34,14 @@ struct AccountDetailView: View {
                 Divider()
                 VStack(spacing: 16) {
                     if account.transactions.isEmpty {
-                        Text("Aucune transaction pour le moment")
+                        Text("Aucune transaction pour le moment...")
                             .font(.callout)
                     }
                     ForEach(account.transactions) { transaction in
-                        TransactionCell(transaction: transaction)
+                        TransactionCell(transaction: transaction, onDelete: {
+                            isShowingTransactionAlert = true
+                            selectedTransactionToDelete = transaction
+                        })
                     }
                     Text("Solde initial : \(String(format: "%.2f", account.initialAmount)) \(account.currency.rawValue)")
                         .font(.callout)
@@ -47,6 +55,50 @@ struct AccountDetailView: View {
         .sheet(isPresented: $isPresentingNewTransactionScreen, content: {
             NewTransactionView()
         })
+        .toolbar {
+            Menu {
+                Button {
+                    isEditingMode = true
+                } label: {
+                    Label("Renommer", systemImage: "pencil")
+                }
+                Button(role: .destructive) {
+                    isShowingAlert = true
+                } label: {
+                    Label("Supprimer", systemImage: "trash")
+                }
+
+            } label: {
+                Image(systemName: "slider.horizontal.3")
+                    .foregroundColor(.primary)
+            }
+        }
+        .alert(isPresented: $isShowingAlert) {
+            Alert(
+                title: Text("Attends !"),
+                message: Text("Es-tu sûr de vouloir supprimer ce compte ? Toutes les transactions liées seront perdus."),
+                primaryButton: .destructive(Text("Supprimer"), action: {
+                    accountslist.accounts.removeAll { element in
+                        element.id == account.id
+                    }
+                    presentationMode.wrappedValue.dismiss()
+                }),
+                secondaryButton: .cancel(Text("Annuler")))
+        }
+        .alert(isPresented: $isShowingTransactionAlert) {
+            Alert(
+                title: Text("Hmm..."),
+                message: Text("Tu es sur le point de supprimer la transaction. Cette transaction sera perdue à jamais."),
+                primaryButton: .destructive(Text("Supprimer"), action: {
+                    withAnimation {
+                        account.transactions.removeAll { transaction in
+                            selectedTransactionToDelete!.id == transaction.id
+                        }
+                    }
+                    selectedTransactionToDelete = nil
+                }),
+                secondaryButton: .cancel(Text("Annuler")))
+        }
     }
 }
 
