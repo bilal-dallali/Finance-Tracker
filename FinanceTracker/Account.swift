@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Account: Identifiable, ObservableObject {
+class Account: Identifiable, ObservableObject, Encodable {
     let id = UUID()
     let iconName: String
     let name: String
@@ -24,5 +24,24 @@ class Account: Identifiable, ObservableObject {
         self.initialAmount = initialAmount
         self.transactions = transactions
         self.currency = currency
+    }
+    
+    enum CodingKeys: CodingKey {
+        case id
+        case iconName
+        case name
+        case initialAmount
+        case currency
+        case transactions
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(name, forKey: .name)
+        try container.encode(iconName, forKey: .iconName)
+        try container.encode(initialAmount, forKey: .initialAmount)
+        try container.encode(currency.rawValue, forKey: .currency)
+        try container.encode(transactions, forKey: .transactions)
     }
 }

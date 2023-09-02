@@ -12,6 +12,8 @@ struct HomeView: View {
     @State private var isPresentingNewAccountScreen = false
     @StateObject private var accountsList = AccountsList()
     
+    @Environment(\.scenePhase) private var scenePhase
+    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -59,6 +61,15 @@ struct HomeView: View {
             }
         }
         .accentColor(.black)
+        .onChange(of: scenePhase) { phase in
+            if phase == .inactive {
+                AccountsList.save(accounts: accountsList.accounts) { result in
+                    if case.failure(let error) = result {
+                        fatalError(error.localizedDescription)
+                    }
+                }
+            }
+        }
     }
 }
 
