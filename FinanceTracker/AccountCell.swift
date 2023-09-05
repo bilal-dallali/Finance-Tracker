@@ -9,8 +9,7 @@ import SwiftUI
 
 struct AccountCell: View {
     
-    let account: Account
-    @State var isFavourite = false
+    @ObservedObject var account: Account
     
     var body: some View {
         HStack {
@@ -28,10 +27,10 @@ struct AccountCell: View {
             }
             Spacer()
             Button {
-                isFavourite.toggle()
+                account.isFavourite.toggle()
             } label: {
-                Image(systemName: isFavourite ? "star.fill" : "star")
-                    .foregroundColor(isFavourite ? .yellow : Color(white: 0.4))
+                Image(systemName: account.isFavourite ? "star.fill" : "star")
+                    .foregroundColor(account.isFavourite ? .yellow : Color(white: 0.4))
             }
 
         }
