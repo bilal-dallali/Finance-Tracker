@@ -19,7 +19,7 @@ class AccountsList: ObservableObject {
         DispatchQueue.global(qos: .background).async {
             do {
                 let data = try JSONEncoder().encode(accounts)
-                let outfile = try fileUrl()
+                let outfile = try fileURL()
                 try data.write(to: outfile)
                 DispatchQueue.main.async {
                     completion(.success(accounts.count))
@@ -32,7 +32,31 @@ class AccountsList: ObservableObject {
         }
     }
     
-    static private func fileUrl() throws -> URL {
+    static func load(completion: @escaping (Result<[Account], Error>) -> Void) {
+        DispatchQueue.global(qos: .background).async {
+            do {
+                let fileURL = try fileURL()
+                
+                guard let file = try? FileHandle(forReadingFrom: fileURL) else {
+                    DispatchQueue.main.async {
+                        completion(.success([]))
+                    }
+                    return
+                }
+                
+                let accounts = try JSONDecoder().decode([Account].self, from: file.availableData)
+                DispatchQueue.main.async {
+                    completion(.success(accounts))
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
+            }
+        }
+    }
+    
+    static private func fileURL() throws -> URL {
         let path = try FileManager.default.url(for: .documentDirectory,
                                                in: .userDomainMask,
                                                appropriateFor: nil,

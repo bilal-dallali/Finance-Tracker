@@ -70,6 +70,16 @@ struct HomeView: View {
                 }
             }
         }
+        .onAppear {
+            AccountsList.load { result in
+                switch result {
+                case .failure(let error):
+                    fatalError(error.localizedDescription)
+                case .success(let accounts):
+                    accountsList.accounts = accounts
+                }
+            }
+        }
     }
 }
 
