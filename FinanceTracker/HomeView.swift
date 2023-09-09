@@ -12,6 +12,8 @@ struct HomeView: View {
     @Environment(\.scenePhase) private var scenePhase
     @State private var isPresentingNewAccountScreen = false
     @State private var isShowingFavouriteOnly = false
+    @State private var isShowingAlert = false
+    @State private var isShowingNewTransactionScreen = false
     @StateObject private var accountsList = AccountsList()
     
     var body: some View {
@@ -24,9 +26,18 @@ struct HomeView: View {
                             .font(.system(size: 32, weight: .bold))
                     }
                     .frame(maxWidth: .infinity)
-                    
-                    AccentButton(title: "+ account", color: Color("Orange")) {
-                        isPresentingNewAccountScreen = true
+                    HStack(spacing: 16) {
+                        AccentButton(title: "+ transaction", color: Color("Purple")) {
+                            if accountsList.accounts.isEmpty {
+                                isShowingAlert = true
+                            } else {
+                                isShowingNewTransactionScreen = true
+                            }
+                        }
+                        
+                        AccentButton(title: "+ account", color: Color("Orange")) {
+                            isPresentingNewAccountScreen = true
+                        }
                     }
                     
                     VStack(alignment: .leading) {
@@ -73,6 +84,19 @@ struct HomeView: View {
                 AccountCreationView { newAccount in
                     accountsList.accounts.append(newAccount)
                 }
+            }
+            .alert(isPresented: $isShowingAlert) {
+                Alert(title: Text("Hop !"),
+                      message: Text("Tu dois d'abord créer un compte avant d'y associer des transactions"),
+                      primaryButton: .default(Text("Créer  un compte"), action: {
+                    isPresentingNewAccountScreen = true
+                }),
+                      secondaryButton: .default(Text("Annuler"))
+                )
+            }
+            .sheet(isPresented: $isShowingNewTransactionScreen) {
+                NewTransactionView()
+                    .environmentObject(accountsList)
             }
         }
         .accentColor(.black)
